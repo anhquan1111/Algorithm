@@ -78,3 +78,91 @@ int main() {
         else cout << get(1, 1, n, x, y) << '\n'; // In ra giá trị nhỏ nhất trong đoạn [x, y]
     }
 }
+// #include <bits/stdc++.h>
+// using namespace std;
+// int n;
+// int a[100];
+// int st[100];
+// void taoCay(int index,int l,int r){
+//     if(l==r){
+//         st[index]=a[l];
+//         return;
+//     }
+//     int m = (l+r)>>1;
+//     taoCay(index*2,l,m);
+//     taoCay(index*2+1,m+1,r);
+//     st[index]=min(st[index*2],st[index*2+1]);
+// }
+// void update(int index,int l,int r,int i,int value){
+//     if(l>i || r<i){
+//         return;
+//     }
+//     if(l==r){
+//         st[index]=value;
+//         return;
+//     }
+//     int m =(l+r)>>1;
+//     update(index*2,l,m,i,value);
+//     update(index*2+1,m+1,r,i,value);
+//     st[index]=min(st[index*2],st[index*2+1]);
+// }
+// int giaTriNhoNhat(int index,int l,int r,int u,int v){
+//     if(l>v || r<u){
+//         return INT_MAX;
+//     }
+//     if(l>=u && r<=v){
+//         return st[index];
+//     }
+//     int m = (l+r)>>1;
+//     int get1 = giaTriNhoNhat(index*2,l,m,u,v);
+//     int get2 = giaTriNhoNhat(index*2+1,m+1,r,u,v);
+//     return min(get1,get2);
+// }
+// int main(){
+//     cout<<"Nhap n: ";
+//     cin>>n;
+//     cout<<"Nhap gia tri a[i]: ";
+//     for(int i=1;i<=n;i++){
+//         cin>>a[i];
+//     }
+//     taoCay(1,1,n);
+//     int q;
+//     cout<<"Nhap so luong truy van: ";
+//     cin>>q;
+//     while(q--){
+//         cout<<"1. Thay doi gia tri a[i]=value "<<endl;
+//         cout<<"2. Gia tri min trong doan u -> v "<<endl;
+//         cout<<"3. Xem mang "<<endl;
+//         cout<<"4. Ket thuc "<<endl;
+//         cout<<"Nhap lua chon: ";
+//         int choose;
+//         cin>>choose;
+//         if(choose==1){
+//             int i,value;
+//             cout<<"Nhap i: ";
+//             cin>>i;
+//             cout<<"Nhap value: ";
+//             cin>>value;
+//             a[i]=value;
+//             update(1,1,n,i,value);
+//             cout<<"Da thay doi thanh cong";
+//             cout<<endl;
+//         }
+//         if(choose==2){
+//             int u,v;
+//             cout<<"Nhap u,v: ";
+//             cin>>u>>v;
+//             cout<<"Gia tri min la: "<<giaTriNhoNhat(1,1,n,u,v)<<endl;
+//         }
+//         if(choose==3){
+//             cout<<"Mang a[i]: ";
+//             for(int i=1;i<=n;i++){
+//                 cout<<a[i]<<" ";
+//             }
+//             cout<<endl;
+//         }
+//         if(choose==4){
+//             break;
+//         }
+//     }
+// }
